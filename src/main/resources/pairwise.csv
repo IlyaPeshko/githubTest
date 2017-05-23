@@ -1,0 +1,3 @@
+level: "veryExperienced", "somewhatExperienced", "totallyNewToProgramming"
+useFor: " design", "development", "schoolProjects", "projectManagement", "research", "other"
+describe: "hobbyist", "professional", "student", "otherOption"

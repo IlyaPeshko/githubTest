@@ -1,0 +1,62 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AccountSuite" verbose="1" >
+    <test name="Smoke create account">
+        <classes>
+            <class name="CreateAccountTest">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="SingOut"/>
+        </classes>
+    </test>
+    <test name="CP negative data for Login">
+        <classes>
+            <class name="CreateAccountTest">
+                <methods>
+                    <include name="testUnderscore"/>
+                    <include name="testSQLInjection"/>
+                    <include name="testRus"/>
+                    <include name="testMaxQuantity"/>
+                    <include name="testMinQuantity"/>
+                    <include name="testSymbol"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CP create already exist account">
+        <classes>
+            <class name="CreateAccountTest">
+                <methods>
+                    <include name="testAlreadyExist"/>
+                </methods>
+            </class>
+            <class name="SingIn">
+                <methods>
+                    <include name="singInTest"/>
+                </methods>
+            </class>
+            <class name="DeleteAccountTest"/>
+        </classes>
+    </test>
+    <test name="CP sing in not exist account">
+        <classes>
+            <class name="SingIn">
+                <methods>
+                    <include name="singInNotExist"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CP pairwise step 3">
+        <classes>
+            <class name="CreateAccountTest">
+                <methods>
+                    <include name="pairwiseStep3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
